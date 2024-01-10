@@ -3,7 +3,7 @@ import TicketCard from './(components)/TicketCard';
 
 const getTickets = async () => {
   try {
-    const res = await fetch('https://ticket-app-vert.vercel.app/api/Tickets', {
+    const res = await fetch(`${process.env.DOMAIN_URI}/api/Tickets`, {
       cache: 'no-store',
     });
 

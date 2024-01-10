@@ -8,12 +8,9 @@ const DeleteBlock = ({ id }) => {
   const router = useRouter();
 
   const deleteTicket = async () => {
-    const res = await fetch(
-      `https://ticket-app-vert.vercel.app/api/Tickets/${id}`,
-      {
-        method: 'DELETE',
-      },
-    );
+    const res = await fetch(`${process.env.DOMAIN_URI}/api/Tickets/${id}`, {
+      method: 'DELETE',
+    });
     if (res.ok) {
       router.refresh();
     }
